@@ -1,0 +1,48 @@
+{
+  "name": "cdate-moment",
+  "description": "moment.js compat plugin for cdate",
+  "version": "0.0.1",
+  "author": "@kawanet",
+  "bugs": {
+    "url": "https://github.com/kawanet/cdate-moment/issues"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.0",
+    "@types/node": "^18.11.9",
+    "cdate": "^0.0.2",
+    "mocha": "^10.1.0",
+    "moment": "^2.29.4",
+    "rollup": "^3.7.4",
+    "typescript": "^4.9.3"
+  },
+  "files": [
+    "./dist/cdate-moment.js",
+    "./index.js"
+  ],
+  "homepage": "https://github.com/kawanet/cdate-moment#readme",
+  "keywords": [
+    "cdate",
+    "dayjs",
+    "luxon",
+    "moment"
+  ],
+  "license": "MIT",
+  "exports": {
+    "import": "./index.js",
+    "require": "./dist/cdate-moment.js"
+  },
+  "main": "./dist/cdate-moment.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kawanet/cdate-moment.git"
+  },
+  "scripts": {
+    "build": "./node_modules/.bin/rollup -f cjs -o dist/cdate-moment.js index.js",
+    "fixpack": "fixpack",
+    "prepack": "npm run build && npm test",
+    "test": "mocha test"
+  },
+  "sideEffects": false,
+  "type": "module",
+  "types": "./index.d.ts"
+}
